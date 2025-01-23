@@ -62,6 +62,7 @@ class Game15(val level: Int) {
                     continue
                 }
             }
+            moves = 0
         }
     }
     private fun deepCopy(state: Array<IntArray>): Array<IntArray> {
