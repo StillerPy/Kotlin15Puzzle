@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/upperText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:text="@string/new_game"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upperText"
+        android:onClick="newGame"
+        />
+    
+    <LinearLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/upperText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        android:padding="20dp">
+
+        <LinearLayout
+            style="@style/row">
+            <Button style="@style/column" android:id="@+id/B_0_0"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_1_0"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_2_0"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_3_0"/>
+        </LinearLayout>
+        <View style="@style/horizontalLine"/>
+        <LinearLayout
+            style="@style/row">
+            <Button style="@style/column" android:id="@+id/B_0_1"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_1_1"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_2_1"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_3_1"/>
+        </LinearLayout>
+        <View style="@style/horizontalLine"/>
+        <LinearLayout
+            style="@style/row">
+            <Button style="@style/column" android:id="@+id/B_0_2"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_1_2"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_2_2"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_3_2"/>
+        </LinearLayout>
+        <View style="@style/horizontalLine"/>
+        <LinearLayout
+            style="@style/row">
+            <Button style="@style/column" android:id="@+id/B_0_3"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_1_3"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_2_3"/>
+            <View style="@style/verticalLine"/>
+            <Button style="@style/column" android:id="@+id/B_3_3"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
