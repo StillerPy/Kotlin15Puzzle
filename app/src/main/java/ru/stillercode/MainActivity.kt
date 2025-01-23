@@ -15,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private var game = Game15(1)
     private var level = 1
+    private var gameFinished = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         }
         buttonGrid = makeButtonGrid()
         updateButtons()
-        println(buttonGrid[0][0])
 
     }
 
@@ -51,7 +51,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun tapButton(button: Button) {
         val xy = getButtonCords(button)
-        game.tap(xy)
+        binding.lowerText.text = game.tap(xy)
+        if (game.isSolved && !gameFinished) {
+            gameFinished = true
+            level++
+        }
         updateButtons()
     }
 
@@ -86,16 +90,22 @@ class MainActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     fun updateButtons() {
         for (x in 0..3) {
-            println(x)
             for (y in 0..3) {
-                buttonGrid[y][x].text = game.get(x, y).toString()
+                val n = game.get(x, y)
+                if (n == 0) {
+                    buttonGrid[y][x].text = ""
+                } else {
+                    buttonGrid[y][x].text = n.toString()
+                }
             }
         }
+        binding.upperText.text = "Level: $level"
     }
-
     fun newGame(view: View) {
         println("New game")
         game = Game15(level)
+        gameFinished = false
         updateButtons()
+        binding.lowerText.text = ""
     }
 }

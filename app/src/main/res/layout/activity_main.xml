@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:textSize="30dp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -82,9 +82,18 @@
             <View style="@style/verticalLine"/>
             <Button style="@style/column" android:id="@+id/B_3_3"/>
         </LinearLayout>
-
-
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/lowerText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize = "20sp"
+        android:text = "Hello"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
